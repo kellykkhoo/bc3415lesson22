@@ -19,8 +19,8 @@ def financial_QA():
 @app.route("/makersuite",methods=["GET","POST"])
 def makersuite():
     q = request.form.get("q")
-    r = palm.chat(prompt=q, **model)
-    return(render_template("makersuite.html",r=r.last))
+    r = model.generate_content(q)
+    return(render_template("makersuite.html",r=r.text))
 
 @app.route("/predcition",methods=["GET","POST"])
 def predcition():
