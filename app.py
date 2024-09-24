@@ -1,10 +1,10 @@
 from flask import Flask,render_template,request
-import google.generativeai as palm
+import google.generativeai as genai
 import os
 
 api = os.getenv("MAKERSUITE_API_TOKEN") 
-palm.configure(api_key=api)
-model = {"model": "models/chat-bison-001"}
+genai.configure(api_key="AIzaSyCNYWXiaRU1zUpf6w08yrvHjMqaV77r3R8")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 app = Flask(__name__)
 
